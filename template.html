@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interactive Family Origin Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <style>
+        #mapid {
+            height: 600px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        .leaflet-popup-content {
+            text-align: center;
+            padding: 8px;
+        }
+
+        .leaflet-popup-close-button {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="mapid"></div>
+    <script>
+        var mymap = L.map('mapid').setView([51.5, 19.5], 6); // Centered to better fit all markers
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+        }).addTo(mymap);
+
+        var markerSofia = L.marker([42.6983, 23.3199]).addTo(mymap);
+        markerSofia.bindPopup("<b>Sofia, Bulgaria</b><br><a href='file:///Users/chenyaron/VSCODEProjects/Family_map/sofia.html' target='_blank'>More Info</a>");
+
+        var markerWarsaw = L.marker([52.2297, 21.0122]).addTo(mymap);
+        markerWarsaw.bindPopup("<b>Warsaw, Poland</b><br><a href='file:///Users/chenyaron/VSCODEProjects/Family_map/warsaw.html' target='_blank'>More Info</a>");
+
+        var markerSulejow = L.marker([51.3541, 19.8853]).addTo(mymap);
+        markerSulejow.bindPopup("<b>Sulejów, Poland</b><br><a href='file:///Users/chenyaron/VSCODEProjects/Family_map/sulejow.html' target='_blank'>More Info</a>");
+
+        var markerMlawa = L.marker([53.1125, 20.3861]).addTo(mymap);
+        markerMlawa.bindPopup("<b>Mława, Poland</b><br><a href='file:///Users/chenyaron/VSCODEProjects/Family_map/mlawa.html' target='_blank'>More Info</a>");
+
+        var markerMoldova = L.marker([47.4116, 28.3699]).addTo(mymap);
+        markerMoldova.bindPopup("<b>Moldova</b><br><a href='file:///Users/chenyaron/VSCODEProjects/Family_map/Moldova.html' target='_blank'>More Info</a>");
+    </script>
+</body>
+</html>
